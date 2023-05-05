@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(../public/fonts/Inter/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(../public/fonts/Inter/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(../public/fonts/Inter/Inter-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(../public/fonts/Inter/Inter-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Uniform';
+  src: url(../public/fonts/uniform/Uniform\ Rounded\ Medium.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Uniform';
+  src: url(../public/fonts/uniform/Uniform\ Rounded\ Bold.otf);
+  font-weight: 700;
+}
+
+:root {
+  --f_Inter: 'Inter';
+  --f_Uniform: 'Uniform';
+  --link: #333333;
+  --link-hover: #27CA7D;
+  --icon-1: #AEAEAE;
+  --icon-2: #576976;
+  --btn: linear-gradient(180deg, #4DE48A 0%, #1FC57A 100%);
+  --white: #fff;
+  --black: #000;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  font-family: var(--f_Inter);
+}
