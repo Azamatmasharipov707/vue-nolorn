@@ -35,6 +35,11 @@
                         Wishlist
                     </button>
                 </div>
+                <div class="navbar-top__card">
+                    <span></span>
+                    <!-- <font-awesome-icon :icon="['fal', 'cart-shopping']" /> -->
+
+                </div>
             </div>
         </div>
     </div>
