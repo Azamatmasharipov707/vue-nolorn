@@ -45,6 +45,7 @@
   --white: #fff;
   --black: #000;
   --border: rgba(0, 0, 0, 0.1);
+  --title: #2B4253;
 }
 
 a {
@@ -65,6 +66,12 @@ input {
   border: none;
   outline: none;
 }
+select {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
 .container {
   max-width: 1170px;
   width: 100%;
@@ -74,4 +81,15 @@ input {
 
 body {
   font-family: var(--f_Inter);
+}
+.btn {
+  background: var(--btn);
+  border-radius: 3px;
+  padding: 15px 0;
+  text-align: center;
+  font-family: var(--f_Uniform);
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  color: var(--white);
 }
