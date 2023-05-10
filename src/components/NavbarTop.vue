@@ -1,7 +1,7 @@
 <template>
     <div class="navbar-top">
         <div class="container">
-            <a href="#!" class="navbar-top__logo"><img src="../../public/image/logo.svg" alt=""></a>
+            <a href="#!" class="navbar-top__logo"><img src="../image/logo.svg" alt=""></a>
             <div class="navbar-top__input">
                 <select name="" id="">
                     <option value="">All cotegories</option>
