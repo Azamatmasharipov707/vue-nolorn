@@ -52,9 +52,10 @@ export default {
         display: flex;
         .header__carousel {
             max-width: 770px;
+            background: #D9F2F9;
             width: 100%;
+            padding: 46px 31px;
             .header__carousel-slide {
-                background: #D9F2F9;
                 .header__carousel-content {
                     font-family: var(--f_Uniform);
                     text-align: start;
@@ -66,6 +67,16 @@ export default {
                         font-weight: 500;
                         color: var(--icon-1);
                         margin: 30px 0;
+                    }
+                    .header__carousel-input {
+                        max-width: 417px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        input {
+                            width: 100%;
+                            padding-left: 10px;
+                        }
                     }
                 }
             }
