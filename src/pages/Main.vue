@@ -4,6 +4,8 @@
         <Navbar />
         <Header />
         <Categories />
+        <Fruits />
+        <Product />
     </div>
 </template>
 
@@ -12,6 +14,8 @@ import Categories from '../components/Categories.vue';
 import Header from '../components/Header.vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarTop from '../components/NavbarTop.vue';
+import Fruits from '../components/Fruits.vue';
+import Product from '../components/Product.vue';
 </script>
 
 <style lang="scss" scoped>
