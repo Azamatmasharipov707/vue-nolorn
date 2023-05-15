@@ -93,3 +93,17 @@ body {
   letter-spacing: 0.06em;
   color: var(--white);
 }
+
+.title{
+
+  font-family: var(--f_Uniform);
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 0.025em;
+  line-height: 47px;
+  text-transform: capitalize;
+}
+
+.title__span{
+  color: var(--link-hover);
+}
