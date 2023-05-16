@@ -46,15 +46,15 @@ const shopObj = reactive([
     },
 ])
 
-/* export default {
-  name: 'App',
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  },
-} */
+// //  export default {
+//   name: 'App',
+//   components: {
+//     Carousel,
+//     Slide,
+//     Pagination,
+//     Navigation,
+//   },
+// } 
 </script>
 
 <template>
@@ -64,8 +64,8 @@ const shopObj = reactive([
                 <h2 class="title">shop <span class="title-span">by Categories</span></h2>
             </div>
             <carousel :items-to-show="1.5">
-                <slide v-for="slide in 10" :key="slide">
-                    {{ slide }}
+                <slide v-for="shopObj in 10" :key="shopObj">
+                    {{shopObj}}
                 </slide>
 
                 <template #addons>
