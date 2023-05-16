@@ -42,6 +42,35 @@
                     </div>
                 </slide>
 
+                <slide class="header__carousel-slide">
+                    <div class="header__carousel-content">
+                        <h1>Rice drink with vitamin D3</h1>
+                        <p>Up to 30% off your first order</p>
+                        <div class="header__carousel-input">
+                            <input type="text" placeholder="Enter your email address">
+                            <button class="btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="header__carousel-img">
+                        <img  src="../image/header/header-1.png" alt="">
+                    </div>
+                </slide>
+
+                <slide class="header__carousel-slide">
+                    <div class="header__carousel-content">
+                        <h1>Rice drink with vitamin D3</h1>
+                        <p>Up to 30% off your first order</p>
+                        <div class="header__carousel-input">
+                            <input type="text" placeholder="Enter your email address">
+                            <button class="btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="header__carousel-img">
+                        <img  src="../image/header/header-1.png" alt="">
+                    </div>
+                </slide>
+
+
                 <template #addons>
                     <!-- <navigation /> -->
                     <pagination />
