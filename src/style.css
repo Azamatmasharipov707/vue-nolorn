@@ -101,6 +101,7 @@ body {
   letter-spacing: 0.025em;
   line-height: 47px;
   text-transform: capitalize; 
+  color: var(--title);
 }
 
 .title-span {
