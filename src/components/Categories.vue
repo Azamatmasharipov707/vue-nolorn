@@ -45,33 +45,37 @@ const shopObj = reactive([
         bgColor: '#D9F2F9'
     },
     {
-        image: '../src/image/cotegories/Sweets.svg',
-        title: 'Drinks',
-        bgColor: '#D4EEE2'
-    },
-    {
         image: '../src/image/cotegories/Drinks.svg',
         title: 'Drinks',
+        bgColor: '#F2EBD9'
+    },
+    {
+        image: '../src/image/cotegories/Sweets.svg',
+        title: 'Sweets',
         bgColor: '#D9F2F9'
     },
     {
         image: '../src/image/cotegories/Greenery.svg',
-        title: 'Drinks',
-        bgColor: '#F2EBD9'
-    }
+        title: 'Greenery',
+        bgColor: '#D9F2F9'
+    },
+    {
+        image: '../src/image/cotegories/fruits.svg',
+        title: 'Fruits',
+        bgColor: '#fff'
+    },
+
 ])
 
-
-
-/* export default {
-  name: 'App',
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  },
-} */
+// //  export default {
+//   name: 'App',
+//   components: {
+//     Carousel,
+//     Slide,
+//     Pagination,
+//     Navigation,
+//   },
+// } 
 </script>
 
 <template>
@@ -80,10 +84,9 @@ const shopObj = reactive([
             <div class="cotegories__top">
                 <h2 class="title">shop <span class="title-span">by Categories</span></h2>
             </div>
-            <carousel :items-to-show="8" class="cotegories__cards">
-                <slide v-for="slide in shopObj" :key="slide" :style="{background: slide.bgColor}" class="cotegories__card">
-                    <img :src="slide.image" alt="">
-                    <p>{{ slide.title }}</p>
+            <carousel :items-to-show="1">
+                <slide v-for="slide in shopObj" :key="slide">
+               
                 </slide>
 
                 <template #addons>
@@ -101,31 +104,36 @@ const shopObj = reactive([
     .container {
         .cotegories__top {
             margin-bottom: 30px;
+
         }
-        .cotegories__cards {
-            .cotegories__card {
-                max-width: 120px;
-                width: 100%;
-                min-height: 120px;
-                // background: red;
-                margin: 10px 15px;
-                border-radius: 5px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                row-gap: 10px;
-                transition: .5s;
-                &:hover {
-                    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.328);
-                }
-                p {
-                    font-size: 14px;
-                    font-family: var(--f_Uniform);
-                    letter-spacing: 0.01em;
-                    color: var(--text);
+            .categories__cards{
+
+                .categories__card{
+                    max-width: 120px;
+                    width: 100%;
+                    min-height: 120px;
+                    // background: red;
+                    margin: 10px 15px;
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 10px;
+                    transition: .5s;
+                    cursor: pointer;
+
+                    &:hover{
+                        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.545);
+                    }
+
+                    p {
+                        font-family: var(--f_Uniform);
+                        font-size: 14px;
+                        letter-spacing: 0.01em;
+                        color: var(--text);
+                    }
                 }
             }
-        }
     }
 }
 </style>

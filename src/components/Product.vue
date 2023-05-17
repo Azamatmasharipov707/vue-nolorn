@@ -25,9 +25,6 @@
     </section>
 </template>
 
-<script setup>
-
-</script>
 
 <style lang="scss" scoped>
 section {
@@ -42,6 +39,7 @@ section {
                 li {
                     button {
                         
+
                     }
                 }
             }
@@ -49,3 +47,60 @@ section {
     }
 }
 </style>
+
+<script setup>
+import { reactive } from 'vue';
+
+const cardObj= reactive([
+    {
+        image: '../src/image/products/kadi.png',
+        title: 'Garbuz Ukraine',
+       
+    },
+    {
+        image: '../src/image/products/priprava.png',
+        title: 'Ground allspice ',   
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+     {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+       
+    },
+
+
+    
+
+])
+
+</script>
+
