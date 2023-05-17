@@ -21,6 +21,46 @@
                     </li>
                 </ul>
             </div>
+            <div class="product__cards">
+                <div class="product__card">
+                    <div class="hot">
+                        <p>hot</p> 
+                    </div>
+                    <div class="hot2">
+                        <p>hot</p> 
+                    </div>
+                    <div class="product__image">
+                        <span>
+                            <font-awesome-icon :icon="['fas', 'heart']" />
+                        </span>
+                        <img src="../image/products/kadi.png" alt="">
+                    </div>
+                    <div class="product__footer">
+                        <p>Category</p>
+                        <h4>Garbuz Ukraine</h4>
+                        <div class="product__card-stars">
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon style="color: var(--text);" :icon="['fas', 'star']" /></button>
+                        </div>
+                        <div class="product__card-price">
+                            <div>
+                                <p>Piker per kg</p>
+                                <p class="price">
+                                    <span>$24.00 </span>
+                                    <del>$30.00</del>
+                                </p>
+                            </div>
+                            <button>
+                                <font-awesome-icon class="add-btn" :icon="['fas', 'cart-shopping']" />
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -38,8 +78,114 @@ section {
                 column-gap: 20px;
                 li {
                     button {
-                        
-
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: var(--text);
+                    }
+                }
+            }
+        }
+        .product__cards {
+            .product__card {
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                max-width: 269px;
+                width: 100%;
+                padding: 23px;
+                position: relative;
+                overflow: hidden;
+                transition: .5s;
+                &:hover {
+                    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.274);
+                }
+                .hot, .hot2 {
+                    position: absolute;
+                    background: #67BCEE;
+                    color: var(--white);
+                    width: 128px;
+                    padding: 10px 0;
+                    text-align: center;
+                    text-transform: capitalize;
+                    transform: rotate(-45deg);
+                    top: 10px;
+                    left: -33px;
+                    &.active {
+                        display: black;
+                    }
+                }
+                .hot2 {
+                    background: #F74B81;
+                }
+                .product__image {
+                    position: relative;
+                    max-width: 208px;
+                    width: 100%;
+                    min-height: 210px;
+                    span {
+                        position: absolute;
+                        right: 0;
+                        &:hover {
+                            color: #F74B81;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .product__footer {
+                    margin-top: 40px;
+                    p {
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: var(--text);
+                    }
+                    h4 {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: var(--title);
+                        margin: 8px 0;
+                    }
+                    .product__card-stars {
+                        display: flex;
+                        column-gap: 4px;
+                        margin-bottom: 17px;
+                        button {
+                            color: var(--star);
+                            font-size: 23px;
+                        }
+                    }
+                    .product__card-price {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        div {
+                            .price {
+                                color: var(--title);
+                                font-size: 16px;
+                                font-weight: 700;
+                                del {
+                                    color: var(--text);
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                        button {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 20px;
+                            border-radius: 5px;
+                            background: #D4EEE2;
+                            font-size: 13px;
+                            font-weight: 500;
+                            padding: 10px;
+                            color: var(--link-hover);
+                            transition: .5s;
+                            .add-btn {
+                                font-size: 16px;
+                            }
+                            &:hover {
+                                box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.274);
+                            }
+                        }
                     }
                 }
             }
