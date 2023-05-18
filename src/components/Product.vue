@@ -21,8 +21,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="product__cards">
-                <div class="product__card">
+            <div class="product__cards" >
+                <div class="product__card" v-for="card in cardObj" :key="card">
                     <div class="hot">
                         <p>hot</p> 
                     </div>
@@ -33,11 +33,11 @@
                         <span>
                             <font-awesome-icon :icon="['fas', 'heart']" />
                         </span>
-                        <img src="../image/products/kadi.png" alt="">
+                        <img :src="card.image" alt="">
                     </div>
                     <div class="product__footer">
                         <p>Category</p>
-                        <h4>Garbuz Ukraine</h4>
+                        <h4>{{ card.title }}</h4>
                         <div class="product__card-stars">
                             <button><font-awesome-icon :icon="['fas', 'star']" /></button>
                             <button><font-awesome-icon :icon="['fas', 'star']" /></button>
@@ -86,7 +86,13 @@ section {
             }
         }
         .product__cards {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+            margin-top: 40px;
             .product__card {
+                
                 border: 1px solid var(--border);
                 border-radius: 10px;
                 max-width: 269px;
@@ -213,39 +219,31 @@ const cardObj= reactive([
        
     },
     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
+        image: '../src/image/products/karam.png',
+        title: 'Boston',
        
     },
     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
+        image: '../src/image/products/pngwing 12.png',
+        title: 'Petya Zhovta',
        
     },
     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
+        image: '../src/image/products/lovya.png',
+        title: 'Boby Edamame c/m',
        
     },
     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
+        image: '../src/image/products/kiwi.png',
+        title: 'Kiwi Gold',
        
     },
     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
+        image: '../src/image/products/qoziqorin.png',
+        title: 'Mushhroom Shiitake',
        
-    },
-     {
-        image: '../src/image/products/gashr.png',
-        title: 'Wash the carot',
-       
-    },
-
-
-    
-
+    }
+  
 ])
 
 </script>

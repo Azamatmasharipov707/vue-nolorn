@@ -3,7 +3,7 @@
 <section>
     <div class="container">
         <div class="fruit__cards">
-            <div class="fruit__card"  v-for="fruit in fruitObj" :style="{background: fruit.bgColor}">
+            <div class="fruit__card" v-for="fruit in fruitObj" :key="fruit" :style="{background: fruit.bgColor}">
                 <img :src="fruit.image" alt="">
                 <div class="fruits__content">
 

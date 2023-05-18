@@ -84,9 +84,11 @@ const shopObj = reactive([
             <div class="cotegories__top">
                 <h2 class="title">shop <span class="title-span">by Categories</span></h2>
             </div>
-            <carousel :items-to-show="1">
-                <slide v-for="slide in shopObj" :key="slide">
-               
+            <carousel :items-to-show="8" class="categories__cards">
+                <slide v-for="slide in shopObj" :key="slide" :style="{background: slide.bgColor}" class="categories__card" >
+               <img :src="slide.image" alt="">
+               <p>{{ slide.title }}</p>
+
                 </slide>
 
                 <template #addons>
