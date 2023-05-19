@@ -1,45 +1,59 @@
 <template>
     <section class="sells">
         <div class="container">
-            <h2 class="title">Daily <span class="title-span">Best Sells</span> </h2>
-            <Carousel :items-to-show="1.5" class="sells__slider">
-                <Slide class="sells__slide">
-                    <div class="sells__card">
-                        <h1>A Burst of energy</h1>
-                        <Button />
+            <carousel :items-to-show="4">
+                <slide v-for="slide in sellObj" :key="slide">
+
+                    <div class="sells__cards" v-for="sells in sellObj">
+                        <div class="sells__card">
+                        {{ sells.title }}
+                        </div>
                     </div>
-                </Slide>
 
+                </slide>
+                
                 <template #addons>
-                    <Navigation />
-                    <Pagination />
+                    <navigation />
+                    <pagination />
                 </template>
-            </Carousel>
+            </carousel>
         </div>
-    </section>
-</template>
-
-<script>
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-import Button from './Button.vue';
-
-export default {
-  name: 'App',
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-    Button
-},
-}
-</script>
-
-<style scoped lang="scss">
-.sells {
-    .container {
-        
+        </section>
+  </template>
+  
+  <script>
+  // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+  import 'vue3-carousel/dist/carousel.css'
+  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+  import { reactive } from 'vue'
+  
+const sellObj = reactive ([
+    {
+        image: '../src/image/Sells/pngwing 13.png',
+        title: 'Gorih pecan' ,
+    },
+    {
+        image: '../src/image/Sells/pngwing 13.png',
+        title: 'Gorih pecan' ,
+    },
+    {
+        image: '../src/image/Sells/pngwing 13.png',
+        title: 'Gorih pecan' ,
     }
-}
+])
+
+  export default {
+    name: 'App',
+    components: {
+      Carousel,
+      Slide,
+      Pagination,
+      Navigation,
+    },
+  }
+  </script>
+
+<style lang="scss" scoped>
+
 </style>
+  
