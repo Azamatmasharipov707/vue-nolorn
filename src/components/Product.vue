@@ -5,10 +5,10 @@
                 <h2 class="title">Popular <span class="title-span">Products</span></h2>
                 <ul class="product__list">
                     <li>
-                        <button>All</button>
+                        <button @click="tabIndex = 1" :class="tabIndex == 1 ? 'active' : ''">All</button>
                     </li>
                     <li>
-                        <button>Milks</button>
+                        <button @click="tabIndex = 2" :class="tabIndex == 2 ? 'active' : ''">Milks</button>
                     </li>
                     <li>
                         <button>Pet Foods</button>
@@ -21,12 +21,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="product__cards" >
+            <div class="product__cards" v-if="tabIndex == 1">
                 <div class="product__card" v-for="card in cardObj" :key="card">
-                    <div class="hot">
+                    <div class="hot" :class="card.line == 'hot' ? 'active': '' ">
                         <p>hot</p> 
                     </div>
-                    <div class="hot2">
+                    <div class="hot2" :class="card.line == 'hot2' ? 'active': ''">
                         <p>hot</p> 
                     </div>
                     <div class="product__image">
@@ -49,8 +49,48 @@
                             <div>
                                 <p>Piker per kg</p>
                                 <p class="price">
-                                    <span>$24.00 </span>
-                                    <del>$30.00</del>
+                                    <span>{{ card.price }}</span>
+                                    <del>{{ card.previos }}</del>
+                                </p>
+                            </div>
+                            <button>
+                                <font-awesome-icon class="add-btn" :icon="['fas', 'cart-shopping']" />
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__cards" v-if="tabIndex == 2">
+                <div class="product__card" v-for="card in cardObj2" :key="card">
+                    <div class="hot" :class="card.line == 'hot' ? 'active': '' ">
+                        <p>hot</p> 
+                    </div>
+                    <div class="hot2" :class="card.line == 'hot2' ? 'active': ''">
+                        <p>hot</p> 
+                    </div>
+                    <div class="product__image">
+                        <span>
+                            <font-awesome-icon :icon="['fas', 'heart']" />
+                        </span>
+                        <img :src="card.image" alt="">
+                    </div>
+                    <div class="product__footer">
+                        <p>Category</p>
+                        <h4>{{ card.title }}</h4>
+                        <div class="product__card-stars">
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon :icon="['fas', 'star']" /></button>
+                            <button><font-awesome-icon style="color: var(--text);" :icon="['fas', 'star']" /></button>
+                        </div>
+                        <div class="product__card-price">
+                            <div>
+                                <p>Piker per kg</p>
+                                <p class="price">
+                                    <span>{{ card.price }}</span>
+                                    <del>{{ card.previos }}</del>
                                 </p>
                             </div>
                             <button>
@@ -68,6 +108,7 @@
 
 <style lang="scss" scoped>
 section {
+    margin-bottom: 80px;
     .container {
         .product__nav {
             display: flex;
@@ -81,6 +122,9 @@ section {
                         font-size: 20px;
                         font-weight: 500;
                         color: var(--text);
+                        &.active {
+                            color: var(--link-hover);
+                        }
                     }
                 }
             }
@@ -101,6 +145,9 @@ section {
                 position: relative;
                 overflow: hidden;
                 transition: .5s;
+                /* display: flex;
+                flex-direction: column;
+                justify-content: space-between; */
                 &:hover {
                     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.274);
                 }
@@ -115,8 +162,9 @@ section {
                     transform: rotate(-45deg);
                     top: 10px;
                     left: -33px;
+                    display: none;
                     &.active {
-                        display: black;
+                        display: block;
                     }
                 }
                 .hot2 {
@@ -124,9 +172,13 @@ section {
                 }
                 .product__image {
                     position: relative;
-                    max-width: 208px;
                     width: 100%;
-                    min-height: 210px;
+                    height: 210px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        // object-fit: cover;
+                    }
                     span {
                         position: absolute;
                         right: 0;
@@ -201,47 +253,122 @@ section {
 </style>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
+
+const tabIndex = ref(1);
 
 const cardObj= reactive([
     {
         image: '../src/image/products/kadi.png',
         title: 'Garbuz Ukraine',
-       
+        price: '$26.00',
+        previos: '$38.00',
+        line: 'hot'
     },
     {
         image: '../src/image/products/priprava.png',
-        title: 'Ground allspice ',   
+        title: 'Ground allspice ',
+        price: '$22.00',
+        previos: '$24.00',
     },
     {
         image: '../src/image/products/gashr.png',
         title: 'Wash the carot',
-       
+        price: '$32.00',
+        previos: '$45.00',
+        line: 'hot2'
     },
     {
         image: '../src/image/products/karam.png',
         title: 'Boston',
-       
+        price: '$24.00',
+        previos: '$26.00',
+        line: 'hot2'
     },
     {
         image: '../src/image/products/pngwing 12.png',
         title: 'Petya Zhovta',
-       
+        price: '$28.00',
+        previos: '$32.00',
+        line: 'hot'
     },
     {
         image: '../src/image/products/lovya.png',
         title: 'Boby Edamame c/m',
-       
+        price: '$24.00',
+        previos: '$30.00',
     },
     {
         image: '../src/image/products/kiwi.png',
         title: 'Kiwi Gold',
-       
+        price: '$21.00',
+        previos: '$23.00',
+        line: 'hot2'
     },
     {
         image: '../src/image/products/qoziqorin.png',
         title: 'Mushhroom Shiitake',
-       
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot'
+    }
+  
+])
+const cardObj2= reactive([
+    {
+        image: '../src/image/products/karam.png',
+        title: 'Boston',
+        price: '$24.00',
+        previos: '$26.00',
+        line: 'hot2'
+    },
+    {
+        image: '../src/image/products/priprava.png',
+        title: 'Ground allspice ',
+        price: '$22.00',
+        previos: '$24.00',
+    },
+    {
+        image: '../src/image/products/gashr.png',
+        title: 'Wash the carot',
+        price: '$32.00',
+        previos: '$45.00',
+        line: 'hot2'
+    },
+    {
+        image: '../src/image/products/pngwing 12.png',
+        title: 'Petya Zhovta',
+        price: '$28.00',
+        previos: '$32.00',
+        line: 'hot'
+        
+    },
+    {
+        image: '../src/image/products/kadi.png',
+        title: 'Garbuz Ukraine',
+        price: '$26.00',
+        previos: '$38.00',
+        line: 'hot'
+    },
+    {
+        image: '../src/image/products/lovya.png',
+        title: 'Boby Edamame c/m',
+        price: '$24.00',
+        previos: '$30.00',
+    },
+    {
+        image: '../src/image/products/qoziqorin.png',
+        title: 'Mushhroom Shiitake',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot'
+    },
+    {
+        image: '../src/image/products/kiwi.png',
+        title: 'Kiwi Gold',
+        price: '$21.00',
+        previos: '$23.00',
+        line: 'hot2'
     }
   
 ])
