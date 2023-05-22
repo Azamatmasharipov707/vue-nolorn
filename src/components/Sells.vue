@@ -1,13 +1,18 @@
 <template>
     <section class="sells">
         <div class="container">
+            <h2 class="sells__title title">Daily<span class="title-span">Best Sells</span></h2>
             <carousel :items-to-show="4">
+                <slide class="sells__card">
+                    <div class="sells__card-first">
+                        <h2>A Burst of energy</h2>
+                        <Button />
+                    </div>
+                </slide>
                 <slide v-for="slide in sellObj" :key="slide">
 
-                    <div class="sells__cards" v-for="sells in sellObj">
-                        <div class="sells__card">
-                        {{ sells.title }}
-                        </div>
+                    <div class="sells__card">
+                       
                     </div>
 
                 </slide>
@@ -25,7 +30,8 @@
   // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
   import 'vue3-carousel/dist/carousel.css'
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-  import { reactive } from 'vue'
+  import { reactive } from 'vue';
+  import Button from './Button.vue'
   
 const sellObj = reactive ([
     {
@@ -42,7 +48,7 @@ const sellObj = reactive ([
     }
 ])
 
-  export default {
+ /*  export default {
     name: 'App',
     components: {
       Carousel,
@@ -50,7 +56,7 @@ const sellObj = reactive ([
       Pagination,
       Navigation,
     },
-  }
+  } */
   </script>
 
 <style lang="scss" scoped>
