@@ -9,23 +9,23 @@
                         <Button />
                     </div>
                 </slide>
-                <slide class="sells__slide">
+                <slide class="sells__slide" v-for="sells in sellsObj">
                     <div class="sells__card">
-                        <div class="hot">
+                        <div class="hot" :class="sells.line == 'hot' ? 'active' : ''">
                             <p>hot</p> 
                         </div>
-                        <div class="hot2">
+                        <div class="hot2" :class="sells.line == 'hot2' ? 'active' : ''">
                             <p>hot</p> 
                         </div>
                         <div class="sells__image">
                             <span>
                                 <font-awesome-icon :icon="['fas', 'heart']" />
                             </span>
-                            <img src="../image/Sells/pngwing 13.png" alt="">
+                            <img :src="sells.image" alt="">
                         </div>
                         <div class="sells__footer">
                             <p>Category</p>
-                            <h4>Gorih pecan</h4>
+                            <h4>{{ sells.title }}</h4>
                             <div class="sells__card-stars">
                                 <button><font-awesome-icon :icon="['fas', 'star']" /></button>
                                 <button><font-awesome-icon :icon="['fas', 'star']" /></button>
@@ -37,8 +37,8 @@
                                 <div>
                                     <p>Piker per kg</p>
                                     <p class="price">
-                                        <span>$24.00 </span>
-                                        <del>$30.00</del>
+                                        <span>{{ sells.price }}</span>
+                                        <del>{{ sells.previos }}</del>
                                     </p>
                                 </div>
                                 <button>
@@ -64,7 +64,45 @@
   import 'vue3-carousel/dist/carousel.css'
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
   import Button from './Button.vue'
-  
+  import { reactive } from 'vue';
+
+  const sellsObj = reactive([
+    {
+        image: '../src/image/Sells/pngwing 13.png',
+        title: 'Gorih pecan',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot2'
+    },
+    {
+        image: '../src/image/Sells/pngwing 14.png',
+        title: 'Gorih pecan',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot'
+    },
+    {
+        image: '../src/image/Sells/pngwing 15.png',
+        title: 'Gorih pecan',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot2'
+    },
+    {
+        image: '../src/image/Sells/pngwing 13.png',
+        title: 'Gorih pecan',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot'
+    },
+    {
+        image: '../src/image/Sells/pngwing 15.png',
+        title: 'Gorih pecan',
+        price: '$24.00',
+        previos: '$30.00',
+        line: 'hot2'
+    },
+  ])
 
  /*  export default {
     name: 'App',
@@ -81,6 +119,7 @@
 .sells {
     .container {
         .sells__slider {
+            margin: 30px 0 80px;
             .sells__slide {
                 text-align: left;
                 .sells__slide-first {
@@ -101,9 +140,13 @@
                     border-radius: 5px;
                     max-width: 270px;
                     width: 100%;
+                    height: 100%;
                     padding: 20px;
                     position: relative;
                     overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     .hot, .hot2 {
                         position: absolute;
                         background: #67BCEE;
@@ -119,10 +162,10 @@
                     &.active {
                         display: block;
                     }
-                    .hot2 {
-                        background: #F74B81;
-                    }
-                    }
+                }
+                .hot2 {
+                    background: #F74B81;
+                }
                     .sells__image {
                         position: relative;
                         margin-top: 20px;

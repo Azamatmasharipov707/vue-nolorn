@@ -6,8 +6,8 @@
        <Categories />
        <Fruits />
        <Product />
-       <Promotions />
        <Sells />
+       <Promotions />
     </div>
 </template>
 
@@ -19,6 +19,7 @@ import Navbar from '../components/Navbar.vue';
 import NavbarTop from '../components/NavbarTop.vue';
 import Product from '../components/Product.vue';
 import Sells from '../components/Sells.vue';
+import Promotions from '../components/Promotions.vue';
 
 </script>
 
