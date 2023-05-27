@@ -8,6 +8,8 @@
        <Product />
        <Sells />
        <Promotions />
+       <Fruits2 />
+       <Allproducts />
     </div>
 </template>
 
@@ -20,6 +22,8 @@ import NavbarTop from '../components/NavbarTop.vue';
 import Product from '../components/Product.vue';
 import Sells from '../components/Sells.vue';
 import Promotions from '../components/Promotions.vue';
+import Fruits2 from '../components/Fruits2.vue';
+import Allproducts from '../components/Allproducts.vue'
 
 </script>
 

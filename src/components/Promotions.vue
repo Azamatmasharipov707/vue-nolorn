@@ -1,19 +1,56 @@
-<script>
+<script setup>
 
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { ref } from 'vue';
+
+const sales = ref([]);
+
+const lounchDate = new Date('1 June 2023');
+const lounchDate2 = new Date('1 september 2023');
+// console.log(lounchDate)
 
 
 
+function timerCount(elem, index) {
+  const currDate = new Date();
+  const lounchTime = elem - currDate
 
-export default {
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  },
-};
+  let seconds = parseInt(lounchTime / 1000)
+  let minutes = parseInt(seconds / 60)
+  let hours = parseInt(minutes / 60)
+  let days = parseInt(hours / 24)
+
+sales.value[index] ={
+  seconds,
+  minutes,
+  hours,
+  days
+
+}
+
+return sales.value[index]
+  
+
+
+}
+
+
+setInterval(() => {
+  timerCount(lounchDate, 0)
+  timerCount(lounchDate2, 1)
+}, 1000)
+
+
+
+// export default {
+//   components: {
+//     Carousel,
+//     Slide,
+//     Pagination,
+//     Navigation,
+//   },
+// };
 </script>
 
 
@@ -21,26 +58,26 @@ export default {
   <section class="promotions">
     <div class="container">
       <h2 class="promotions__title title">Hot<span class="title-span">Promotions</span></h2>
-      <carousel :items-to-show="4" class="promotions__slider">
-        <slide class="promotions__slide">
+      <carousel :items-to-show="2" class="promotions__slider">
+        <slide class="promotions__slide" v-for="item in sales" >
           <img src="../image/promotions/promotions-bg.png" alt="" class="promotions__image">
           <div class="promotions__content">
             <div class="promotions__timer">
               <div class="promotions__time">
                 <p>Days</p>
-                <span>01</span>
+                <span>{{ item.days }}</span>
               </div>
               <div class="promotions__time">
-                <p>Days</p>
-                <span>01</span>
+                <p>Hour</p>
+                <span>{{ item.hours % 24}}</span>
               </div>
               <div class="promotions__time">
-                <p>Days</p>
-                <span>01</span>
+                <p>Minute</p>
+                <span>{{ item.minutes % 60 }}</span>
               </div>
               <div class="promotions__time">
-                <p>Days</p>
-                <span>01</span>
+                <p>Second</p>
+                <span>{{item.seconds % 60}}</span>
               </div>
             </div>
             <div class="promotions__footer">
