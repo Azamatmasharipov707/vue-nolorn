@@ -233,7 +233,10 @@
                     column-gap: 10px;
                     border: 2px solid var(--black);
                     border-radius: 15px; 
-                    .footer__app-icon {
+                    margin: 20px 0;
+                    
+                    
+                        .footer__app-icon {
                         font-size: 45px;
                     }
                     .footer__app-info {
