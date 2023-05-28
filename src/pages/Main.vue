@@ -12,6 +12,7 @@
        <Allproducts />
        <Delivery />
        <Shopping />
+       <Footer />
     </div>
 </template>
 

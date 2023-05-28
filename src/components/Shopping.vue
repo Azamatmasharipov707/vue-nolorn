@@ -3,7 +3,7 @@
         <div class="container">
             <div class="shopping__info">
                 <h2>Stay home & get your daily needs from our shop</h2>
-                <p>Start You’r Daily Shopping with <span class="title-span">Nolorn</span></p>
+                <p>Start You'r Daily Shopping with <span class="title-span">Nolorn</span></p>
                 
                   <form action="">
                     <div class="email">

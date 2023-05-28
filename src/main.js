@@ -21,6 +21,8 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
 /* add icons to the library */
 library.add(
   faUserSecret,
@@ -38,7 +40,9 @@ library.add(
   faCartShopping,
   faEnvelope,
   faLocationDot,
-  faClock
+  faClock,
+  faGooglePlay,
+  faApple
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
