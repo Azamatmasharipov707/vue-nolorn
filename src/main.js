@@ -18,7 +18,9 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 /* add icons to the library */
 library.add(
   faUserSecret,
@@ -33,7 +35,10 @@ library.add(
   faWhatsapp,
   faPhoneVolume,
   faStar,
-  faCartShopping
+  faCartShopping,
+  faEnvelope,
+  faLocationDot,
+  faClock
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
