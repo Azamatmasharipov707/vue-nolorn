@@ -13,7 +13,7 @@
        <Delivery />
        <Shopping />
        <Footer />
-       <Nextpage />
+
     </div>
 </template>
 
@@ -31,7 +31,6 @@ import Allproducts from '../components/Allproducts.vue'
 import Delivery from '../components/Delivery.vue';
 import Shopping from '../components/Shopping.vue';
 import Footer from '../components/Footer.vue';
-import Nextpage from '../components/Nextpage.vue';
 
 </script>
 
